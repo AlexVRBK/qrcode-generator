@@ -9,8 +9,8 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - nuxt-firebase-auth',
-    title: 'nuxt-firebase-auth',
+    titleTemplate: 'QR-Code Generator',
+    title: 'QR-Code Generator',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -45,7 +45,7 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/pwa',
+    '@nuxtjs/google-fonts',
     
       [
         '@nuxtjs/firebase',
@@ -71,16 +71,20 @@ export default {
         }
       ]
   ],
+   googleFonts: {
+    families: {
+      // Додайте назви шрифтів, які ви хочете використовувати
+      // Наприклад, 'Roboto' та 'Open+Sans'
+      'IBM+Plex+Mono': [400, 600],
+      Montserrat: [400, 900]
+    }
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
-  pwa: {
-    manifest: {
-      lang: 'en'
-    }
-  },
+ 
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
