@@ -3,6 +3,7 @@
     <h1>Profile</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet cum omnis rem eum quo, quia accusamus totam dolorem veritatis voluptatum.</p>
     <v-btn @click="$router.push('/')">Home</v-btn>
+    <v-btn @click="$router.push('/social')">Social</v-btn>
     <canvas ref="qrcodeCanvas"></canvas>
   </div>
 </template>
