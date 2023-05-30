@@ -3,6 +3,7 @@
     <h1>Welcome to your dashboard</h1>
     <p>You are now logged in {{ $nuxt.$fire.auth.currentUser.email }}</p>
     <v-btn @click="$router.push('/auth/signout')">Logout</v-btn>
+    <v-btn @click="$router.push('/profile')">Profile</v-btn>
   </div>
 </template>
 
