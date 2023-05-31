@@ -6,22 +6,22 @@
     <v-btn @click="$router.push('/social')">Social</v-btn>
     <p>You are now logged in {{ $nuxt.$fire.auth.currentUser.email }}</p>
     <v-btn @click="$router.push('/auth/signout')">Logout</v-btn>
-    <canvas ref="qrcodeCanvas"></canvas>
+    <!-- <canvas ref="qrcodeCanvas"></canvas> -->
   </div>
 </template>
 
 <script>
 export default {
-  mounted() {
-    const qrcodeData = 'https://github.com/AlexVRBK' // Посилання або дані, що ви хочете закодувати у QR-код
-    const canvas = this.$refs.qrcodeCanvas
+  // mounted() {
+  //   const qrcodeData = 'https://github.com/AlexVRBK' // Посилання або дані, що ви хочете закодувати у QR-код
+  //   const canvas = this.$refs.qrcodeCanvas
 
-    this.$qrcode.toCanvas(canvas, qrcodeData, (error) => {
-      if (error) {
-        console.error('Помилка при генерації QR-коду:', error)
-      }
-    })
-  }
+  //   this.$qrcode.toCanvas(canvas, qrcodeData, (error) => {
+  //     if (error) {
+  //       console.error('Помилка при генерації QR-коду:', error)
+  //     }
+  //   })
+  // }
 }
 </script>
 

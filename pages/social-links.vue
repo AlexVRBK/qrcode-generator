@@ -1,16 +1,25 @@
 <template>
   <div>
     <h1>Social Links</h1>
-    <ul>
-      <li><a href="https://github.com/AlexVRBK">GitHub</a></li>
-      <li><a href="https://www.linkedin.com/in/alexvorobok/">linkedin</a></li>
-      <li><a href="https://github.com/AlexVRBK">Instagram</a></li>
-    </ul>
+    <p>Facebook: {{ socialLinks.facebook }}</p>
+    <p>Twitter: {{ socialLinks.twitter }}</p>
+    <p>Instagram: {{ socialLinks.instagram }}</p>
   </div>
 </template>
 
 <script>
 export default {
-  // Ваші налаштування компонента
-}
+  data() {
+    return {
+      socialLinks: {}
+    };
+  },
+  mounted() {
+    // Отримуємо параметр QR-коду з URL
+    const qrCodeData = decodeURIComponent(this.$route.query.data);
+
+    // Парсимо JSON-рядок з даними посилань
+    this.socialLinks = JSON.parse(qrCodeData);
+  }
+};
 </script>
