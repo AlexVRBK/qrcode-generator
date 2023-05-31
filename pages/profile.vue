@@ -4,6 +4,8 @@
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet cum omnis rem eum quo, quia accusamus totam dolorem veritatis voluptatum.</p>
     <v-btn @click="$router.push('/')">Home</v-btn>
     <v-btn @click="$router.push('/social')">Social</v-btn>
+    <p>You are now logged in {{ $nuxt.$fire.auth.currentUser.email }}</p>
+    <v-btn @click="$router.push('/auth/signout')">Logout</v-btn>
     <canvas ref="qrcodeCanvas"></canvas>
   </div>
 </template>
