@@ -4,6 +4,7 @@
     <v-btn v-if="authenticated" @click="$router.push('/auth/signout')">Logout</v-btn>
     <v-btn v-else @click="$router.push('/auth/signin')">Sign In</v-btn>
      <v-btn @click="$router.push('/profile')">Profile</v-btn>
+     <v-btn @click="$router.push('/info')">Info</v-btn>
   </div>
 </template>
 <script>
