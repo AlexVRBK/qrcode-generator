@@ -7,11 +7,16 @@
     <p>You are now logged in {{ $nuxt.$fire.auth.currentUser.email }}</p>
     <v-btn @click="$router.push('/auth/signout')">Logout</v-btn>
     <!-- <canvas ref="qrcodeCanvas"></canvas> -->
+    <Card />
   </div>
 </template>
 
 <script>
+import Card from '@/components/Card.vue';
 export default {
+  components: {
+    Card
+  },
   // mounted() {
   //   const qrcodeData = 'https://github.com/AlexVRBK' // Посилання або дані, що ви хочете закодувати у QR-код
   //   const canvas = this.$refs.qrcodeCanvas
