@@ -1,7 +1,7 @@
 <template>
-  <v-row align="center" justify="center">
+ <v-row align="center" justify="center" style="margin-top: 50px;">
     <v-col cols="12" sm="8" md="4" align="center">
-      <v-card width="500" class="elevation-4 text-left" shaped color="yellow">
+      <v-card min-width="380" class="elevation-4 text-left">
         <v-card-title>Register</v-card-title>
         <v-card-subtitle>Register a new account</v-card-subtitle>
         <v-card-text>
@@ -24,6 +24,7 @@
           </v-form>
         </v-card-text>
         <v-card-actions class="text-center">
+           <div style="margin-left: 115px;">
           <v-btn
             class="register-button"
             @click="register"
@@ -32,6 +33,9 @@
           >
             Register
           </v-btn>
+          </div>
+          </v-card-actions>
+           <v-card-actions class="text-center">
           <v-btn
             class="login-link-button"
             @click="goToLogin"
@@ -40,6 +44,7 @@
           >
             У мене є аккаунт
           </v-btn>
+         
         </v-card-actions>
       </v-card>
       <v-snackbar

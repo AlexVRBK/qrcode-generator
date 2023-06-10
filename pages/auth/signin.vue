@@ -1,7 +1,7 @@
 <template>
-  <v-row align="center" justify="center">
+  <v-row align="center" justify="center" style="margin-top: 50px;">
     <v-col cols="12" sm="8" md="4" align="center">
-      <v-card width="500" class="elevation-4 text-left" shaped color="yellow">
+      <v-card min-width="380" class="elevation-4 text-left">
         <v-card-title>Login</v-card-title>
         <v-card-subtitle>Login to your dashboard</v-card-subtitle>
         <v-card-text>
@@ -24,6 +24,7 @@
           </v-form>
         </v-card-text>
         <v-card-actions class="text-center">
+           <div style="margin-left: 35px;">
           <v-btn
             class="login-button"
             @click="login"
@@ -32,14 +33,19 @@
           >
             Login
           </v-btn>
-          <v-btn
-            class="reset-button"
-            @click="forgotPassword"
-            depressed
-            large
-          >
-            Forgot Password
-          </v-btn>
+          </div>
+          <div style="margin-left: 10px;">
+            <v-btn
+              class="reset-button"
+              @click="forgotPassword"
+              depressed
+              large
+            >
+              Forgot Password
+            </v-btn>
+          </div>
+        </v-card-actions>
+        <v-card-actions class="text-center">
           <v-btn
             class="register-link-button"
             @click="goToRegister"
@@ -108,5 +114,5 @@ export default {
 </script>
 
 <style>
-/* Ваші стилі */
+
 </style>
