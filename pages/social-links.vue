@@ -1,10 +1,12 @@
 <template>
+<div class="container">
   <div>
     <h1>Social Linkss</h1>
     <p>Facebook: {{ socialLinks.facebook }}</p>
     <p>Twitter: {{ socialLinks.twitter }}</p>
     <p>Instagram: {{ socialLinks.instagram }}</p>
   </div>
+</div>
 </template>
 
 <script>

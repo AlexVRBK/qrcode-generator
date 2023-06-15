@@ -1,5 +1,7 @@
 <template>
-  <h1>XYU</h1>
+  <div class="container">
+    <h1>INFO</h1>
+  </div>
 </template>
 
 <script>

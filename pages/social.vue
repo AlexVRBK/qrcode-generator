@@ -1,4 +1,5 @@
 <template>
+<div class="container">
   <div class="form-container">
     <v-btn @click="$router.push('/')">Home</v-btn>
     <form @submit.prevent="generateQRCode">
@@ -19,11 +20,11 @@
       <div v-else-if="isGenerating" class="preloader"></div>
     </div>
   </div>
+</div>
 </template>
 
 <style>
   .form-container {
-    background-color: #f0f0f0;
     padding: 20px;
   }
 
