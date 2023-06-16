@@ -70,7 +70,7 @@
                 to="/"
                  style="color: rgb(5, 150, 105)"
                 class="underline font-extrabold text-emerald-600 hover:text-emerald-500 focus:text-emerald-500 transition-colors duration-200"
-                >EnBizCard</NuxtLink
+                >BizCard</NuxtLink
               >.
             </li>
             <li>
@@ -175,7 +175,7 @@
                 to="/"
                  style="color: rgb(5, 150, 105)"
                 class="underline font-extrabold text-emerald-600 hover:text-emerald-500 focus:text-emerald-500 transition-colors duration-200"
-                >EnBizCard</NuxtLink
+                >BizCard</NuxtLink
               >
               and generate a new digital business card.
             </li>
@@ -200,7 +200,7 @@
                 to="/"
                  style="color: rgb(5, 150, 105)"
                 class="underline font-extrabold text-emerald-600 hover:text-emerald-500 focus:text-emerald-500 transition-colors duration-200"
-                >EnBizCard</NuxtLink
+                >BizCard</NuxtLink
               >
               and generate a digital business card.
             </li>
@@ -221,7 +221,7 @@
       
       <div class="footer">
     <img src="@/static/icon_384.png" class="logo" alt="Логотип" height="32px" />
-    <h1 class="logo-text">EnBizCard</h1>
+    <h1 class="logo-text">BizCard</h1>
   </div>
     </div>
   </div>

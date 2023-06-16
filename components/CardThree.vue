@@ -2,7 +2,7 @@
   <div class="container">
     <div class="cardWrap" ref="cardWrap" @mousemove="handleMouseMove" @mouseout="resetCard">
       <div class="card">
-        <div class="cardBg" :style="`background-image: url(${require('@/assets/images/bizcardmaket.png')})`"></div>
+        <div class="cardBg" :style="`background-image: url(${require('@/assets/images/bizcardmaket3.jpg')})`"></div>
         <div class="cardInfo">
           <h3 class="cardTitle">
             Mathematics

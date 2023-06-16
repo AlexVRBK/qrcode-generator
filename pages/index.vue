@@ -69,7 +69,7 @@
     </div>
     <div class="footer">
     <img src="@/static/icon_384.png" class="logo" alt="Логотип" height="32px" />
-    <h1 class="logo-text">EnBizCard</h1>
+    <h1 class="logo-text">BizCard</h1>
   </div>
   </div>
 </template>

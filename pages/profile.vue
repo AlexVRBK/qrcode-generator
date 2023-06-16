@@ -6,6 +6,9 @@
         <p class="email">
           You are now logged in <span class="email-span">{{ $nuxt.$fire.auth.currentUser.email }}</span>
         </p>
+        <div>
+      <img src="@/assets/images/bizcardmaket.png" alt="" class="bizcard_image">
+    </div>
       </div>
       
       <div class="button-group">
@@ -16,18 +19,28 @@
     dark
     large
     style="background-color: rgb(5, 150, 105, 0.8)" 
-    @click="$router.push('/social')" >Social</v-btn>
+    @click="$router.push('/social')" >GitHub</v-btn>
       <!-- <canvas ref="qrcodeCanvas"></canvas> -->
       <Card />
+      <CardTwo />
+      <CardThree />
+      <CardFour />
     </div>
   </div>
 </template>
 
 <script>
 import Card from '@/components/Card.vue';
+import CardTwo from '@/components/CardTwo.vue';
+import CardThree from '@/components/CardThree.vue';
+import CardFour from '@/components/CardFour.vue';
+
 export default {
   components: {
-    Card
+    Card,
+    CardTwo,
+    CardThree,
+    CardFour
   },
   // mounted() {
   //   const qrcodeData = 'https://github.com/AlexVRBK' // Посилання або дані, що ви хочете закодувати у QR-код
@@ -43,7 +56,10 @@ export default {
 </script>
 
 <style scoped>
-
+.bizcard_image{
+  width: 100px;
+  height: 200px;
+}
 
 .email-span {
   color: rgb(5, 150, 105);
