@@ -18,11 +18,11 @@
       <input type="text" id="companyName" v-model="companyName" />
     </div>
 
-     <div>
-    <label for="socialNetwork">Соціальна мережа:</label>
-    <input type="text" id="socialNetwork" v-model="socialNetwork" />
-    <button @click="generateQRCode">Генерувати QR-код</button>
-  </div>
+    <div>
+      <label for="socialNetwork">Соціальна мережа:</label>
+      <input type="text" id="socialNetwork" v-model="socialNetwork" />
+      <button @click="generateQRCode">Генерувати QR-код</button>
+    </div>
 
     <!-- Форма для выбора фона визитки -->
     <div>
@@ -31,14 +31,19 @@
     </div>
 
     <!-- Визуализация визитки -->
-      <div
+    <div
       class="business-card"
       :style="`background-color: ${cardColor}; font-size: ${fontSize}px; width: ${cardWidth}px; height: ${cardHeight}px;`"
       ref="businessCard"
     >
       <h3 :style="`font-family: ${fontFamily}`">{{ firstName }} {{ lastName }}</h3>
       <p :style="`font-family: ${fontFamily}`">{{ companyName }}</p>
-      <img v-if="qrCodeGenerated" :src="qrCodeUrl" alt="QR Code" />
+      <img
+        v-if="qrCodeGenerated"
+        :src="qrCodeUrl"
+        :style="`width: ${qrCodeWidth}px; height: ${qrCodeHeight}px;`"
+        alt="QR Code"
+      />
     </div>
 
     <!-- Кнопки для скачивания визитки -->
@@ -52,7 +57,6 @@
     </div>
   </div>
 </template>
-
 
 <script>
 import JSZip from 'jszip';
@@ -69,39 +73,52 @@ export default {
       fontSize: 18,
       cardWidth: 300,
       cardHeight: 200,
+      qrCodeGenerated: false,
+      qrCodeUrl: '',
+      qrCodeWidth: 100,
+      qrCodeHeight: 100,
       fontFamily: 'Arial',
-      qrCodeGenerated: false, // Додано нову властивість
-      qrCodeUrl: ''
     };
   },
 
-  methods: {
-    downloadAsImage() {
-      // Получаем элемент визитки
-      const cardElement = this.$refs.businessCard;
 
-      // Создаем новый холст (canvas) и устанавливаем его размеры
+  methods: {
+        downloadAsImage() {
+      const cardElement = this.$refs.businessCard;
       const canvas = document.createElement('canvas');
       canvas.width = cardElement.offsetWidth;
       canvas.height = cardElement.offsetHeight;
-
-      // Получаем контекст холста
       const context = canvas.getContext('2d');
+      const cardStyle = getComputedStyle(cardElement);
 
-      // Рисуем содержимое визитки на холсте
-      context.drawSvg(cardElement.innerHTML, 0, 0, canvas.width, canvas.height);
+      // Рисуємо фон візитки
+      context.fillStyle = cardStyle.backgroundColor;
+      context.fillRect(0, 0, canvas.width, canvas.height);
 
-      // Создаем ссылку для скачивания изображения
+      // Рисуємо текст
+      context.font = `${this.fontSize}px ${this.fontFamily}`;
+      context.fillStyle = cardStyle.color;
+      context.fillText(this.firstName + ' ' + this.lastName, 10, 30);
+      context.fillText(this.companyName, 10, 60);
+
+      // Рисуємо QR-код, якщо він згенерований
+      if (this.qrCodeGenerated) {
+        const qrCodeImage = new Image();
+        qrCodeImage.src = this.qrCodeUrl;
+        context.drawImage(qrCodeImage, 10, 90, this.qrCodeWidth, this.qrCodeHeight);
+      }
+
+      // Створюємо посилання для завантаження зображення
       const link = document.createElement('a');
       link.href = canvas.toDataURL('image/png');
       link.download = 'business_card.png';
 
-      // Добавляем ссылку на страницу и эмулируем клик для скачивания
+      // Додаємо посилання на сторінку та емулюємо клік для завантаження
       document.body.appendChild(link);
-
-    link.click();
-          document.body.removeChild(link);
+      link.click();
+      document.body.removeChild(link);
     },
+
     downloadAsZip() {
       // Создаем новый экземпляр объекта JSZip
       const zip = new JSZip();
