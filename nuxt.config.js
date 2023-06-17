@@ -123,5 +123,12 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+    extend(config, { isDev, isClient }) {
+      // Добавьте следующую настройку
+      if (isClient) {
+        config.resolve.alias['jszip'] = 'jszip/dist/jszip.min.js';
+      }
+    }
+  },
+  
 }

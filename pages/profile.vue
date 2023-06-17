@@ -28,6 +28,10 @@
       </div>
       
       <CardTwo />
+
+      <div class="cardgenerator_wrapper">
+        <CardGeneratorVue />
+      </div>
     </div>
   </div>
 </template>
@@ -37,13 +41,15 @@ import Card from '@/components/Card.vue';
 import CardTwo from '@/components/CardTwo.vue';
 import CardThree from '@/components/CardThree.vue';
 import CardFour from '@/components/CardFour.vue';
+import CardGeneratorVue from '@/components/CardGenerator.vue';
 
 export default {
   components: {
     Card,
     CardTwo,
     CardThree,
-    CardFour
+    CardFour,
+    CardGeneratorVue
   },
   // mounted() {
   //   const qrcodeData = 'https://github.com/AlexVRBK' // Посилання або дані, що ви хочете закодувати у QR-код
@@ -78,6 +84,11 @@ export default {
   display: flex;
   justify-content: space-around;
   margin: 50px;
+}
+
+.cardgenerator_wrapper{
+  margin-top: 100px;
+  background: rgb(5, 150, 105);
 }
 </style>
 
