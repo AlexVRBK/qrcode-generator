@@ -84,14 +84,18 @@ export default {
 
 <style>
 .container {
-  margin: auto;
+  
   font-family: 'Arial', sans-serif;
-  max-width: 700px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .form-container {
   padding: 20px;
   background-color: #10a776;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .input-field {

@@ -126,7 +126,7 @@ export default {
   -webkit-box-flex: 0;
   flex: 0 0 240px;
   width: 270px;
-  height: 370px;
+  height: 430px;
   background-color: #333;
   overflow: hidden;
   border-radius: 10px;

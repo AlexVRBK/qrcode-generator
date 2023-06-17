@@ -125,8 +125,8 @@ export default {
   position: relative;
   -webkit-box-flex: 0;
   flex: 0 0 240px;
-  width: 270px;
-  height: 370px;
+   width: 280px;
+  height: 450px;
   background-color: #333;
   overflow: hidden;
   border-radius: 10px;

@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container_card">
     <div class="cardWrap" ref="cardWrap" @mousemove="handleMouseMove" @mouseout="resetCard">
       <div class="card">
         <div class="cardBg" :style="`background-image: url(${require('@/assets/images/bizcardmaket3.jpg')})`"></div>
@@ -63,12 +63,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
+.container_card {
   padding: 40px 80px;
-  display: flex;
-  flex-wrap: wrap;
-  -webkit-box-pack: center;
-  justify-content: center;
+  max-width: 400px;
 }
 
 .cardWrap {
@@ -125,8 +122,8 @@ export default {
   position: relative;
   -webkit-box-flex: 0;
   flex: 0 0 240px;
-  width: 270px;
-  height: 370px;
+  width: 210px;
+  height: 340px;
   background-color: #333;
   overflow: hidden;
   border-radius: 10px;

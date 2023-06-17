@@ -6,9 +6,6 @@
         <p class="email">
           You are now logged in <span class="email-span">{{ $nuxt.$fire.auth.currentUser.email }}</span>
         </p>
-        <div>
-      <img src="@/assets/images/bizcardmaket.png" alt="" class="bizcard_image">
-    </div>
       </div>
       
       <div class="button-group">
@@ -21,10 +18,16 @@
     style="background-color: rgb(5, 150, 105, 0.8)" 
     @click="$router.push('/social')" >GitHub</v-btn>
       <!-- <canvas ref="qrcodeCanvas"></canvas> -->
-      <Card />
+      <div class="card_wrapper">
+        <div>
+          <CardThree />
+        </div>
+        <div>
+          <CardFour />
+        </div>
+      </div>
+      
       <CardTwo />
-      <CardThree />
-      <CardFour />
     </div>
   </div>
 </template>
@@ -69,6 +72,12 @@ export default {
   margin-top: 16px;
   margin-bottom: 46px;
   text-align: right;
+}
+
+.card_wrapper{
+  display: flex;
+  justify-content: space-around;
+  margin: 50px;
 }
 </style>
 

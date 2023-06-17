@@ -8,9 +8,23 @@ export default {
   target: 'static',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
+  meta: {
+    ogType: 'website',
+    ogImage: '',
+    // ogUrl: false,
+    ogTitle: 'BizCard - An Open-Source Digital Business Card Generator',
+    ogDescription:
+      'BizCard helps you create beautiful, responsive HTML-based digital business cards that can be hosted on your website.',
+    ogSiteName: 'BizCard - An Open-Source Digital Business Card Generator',
+    author: 'Alex VRBK',
+    lang: 'en',
+    name: 'BizCard - An Open-Source Digital Business Card Generator',
+  },
+
   head: {
     titleTemplate: 'BizCard',
-    title: 'BizCard',
+    title: 'BizCard - An Open-Source Digital Business Card Generator',
+    
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
