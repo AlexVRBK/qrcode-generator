@@ -17,6 +17,15 @@
     large
     style="background-color: rgb(5, 150, 105, 0.8)" 
     @click="$router.push('/social')" >GitHub</v-btn>
+    <v-btn
+      class="font-extrabold leading-none text-lg tracking-wide select-none shrink-0 p-5 mt-2 mr-2 text-white"
+      color="emerald"
+      dark
+      large
+      style="background-color: rgb(5, 150, 105, 0.8)"
+      @click="scrollToCardGenerator">
+      Create Card
+    </v-btn>
       <!-- <canvas ref="qrcodeCanvas"></canvas> -->
       <div class="card_wrapper">
         <div>
@@ -29,9 +38,10 @@
       
       <CardTwo />
 
-      <div class="cardgenerator_wrapper">
+      <div class="cardgenerator_wrapper" id="cardgenerator">
         <CardGeneratorVue />
       </div>
+
     </div>
   </div>
 </template>
@@ -51,16 +61,12 @@ export default {
     CardFour,
     CardGeneratorVue
   },
-  // mounted() {
-  //   const qrcodeData = 'https://github.com/AlexVRBK' // Посилання або дані, що ви хочете закодувати у QR-код
-  //   const canvas = this.$refs.qrcodeCanvas
-
-  //   this.$qrcode.toCanvas(canvas, qrcodeData, (error) => {
-  //     if (error) {
-  //       console.error('Помилка при генерації QR-коду:', error)
-  //     }
-  //   })
-  // }
+  methods: {
+    scrollToCardGenerator() {
+      const element = document.getElementById('cardgenerator');
+      element.scrollIntoView({ behavior: 'smooth' });
+    },
+  },
 }
 </script>
 
